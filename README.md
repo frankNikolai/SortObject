@@ -27,34 +27,36 @@ ___
 ## Функция сортировки
 ```C#
 public string Sort(string input, string typeSort)
+{
+    // Преобразование в массив символов 
+    char[] _typeSort = typeSort.ToCharArray();
+    char[] _input = input.ToCharArray();
+
+    // Указатель на уже отсортированную часть строки
+    int countElement = 0;
+
+    for (int i = 0; i < _typeSort.Length; i++)
+    {
+        for (int j = countElement; j < _input.Length; j++)
         {
-            // Преобразование в массив символов 
-            char[] _typeSort = typeSort.ToCharArray();
-            char[] _input = input.ToCharArray();
-
-            // Указатель на уже отсортированную часть строки
-            int countElement = 0;
-
-            for (int i = 0; i < _typeSort.Length; i++)
+            for (int k = j; k < _input.Length; k++)
             {
-                for (int j = countElement; j < _input.Length; j++)
-                {
-                    for (int k = j; k < _input.Length; k++)
-                    {
-                        // В случае если найден символ в входной строке, который равен символу по выбранному шаблону 
-                        if (Regex.IsMatch(_input[k].ToString(), _typeSort[i].ToString(), RegexOptions.IgnoreCase))
-                        {
-                            // меняем местами
-                            char buff = _input[j];
-                            _input[j] = _input[k];
-                            _input[k] = buff;
-                            // повышаем указатель 
-                            countElement++;
-                            // выходим из цикла, так как в рамках заменненого символа уже ничего менять не требуется
-                            break;
-                        }
-                    }
-                }
-            }
-            return new string(_input).ToUpper();
+                // В случае если найден символ в входной строке, который равен символу по выбранному шаблону 
+                \if (Regex.IsMatch(_input[k].ToString(), _typeSort[i].ToString(), RegexOptions.IgnoreCase))
+                 {
+                     // меняем местами
+                     char buff = _input[j];
+                     _input[j] = _input[k];
+                     _input[k] = buff;
+                     // повышаем указатель 
+                     countElement++;
+                     // выходим из цикла, так как в рамках заменненого символа уже ничего менять не требуется
+                     break;
+                   }
+              }
+          }
+      }
+   // возвращаем строку с отсортированным массивом символов
+   return new string(_input).ToUpper();
+}
 ```
