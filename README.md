@@ -22,7 +22,7 @@ ___
 ✅ ***KISS (Keep it simple, stupid)*** - принцип проектирования программного обеспечения, нацеленный на снижение уровня сложности системы с целью оптимизации.  
 ___
 ## Главное окно
-![](https://github.com/frankNikolai/SortObject/edit/master/MainWindow.png)
+![](MainWindow.png)
 ___
 ## Функция сортировки
 ```C#
